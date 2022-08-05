@@ -494,7 +494,7 @@ footer h4 {
   .page_menu img {
     height: 190px;
   }
-  .page_menu ul h2 {
+  .page_menu section h2 {
     margin-left: 0;
   }
   .page_menu .entree_plat_dessert {
@@ -502,7 +502,7 @@ footer h4 {
     flex-direction: row;
     justify-content: center;
   }
-  .page_menu .entree_plat_dessert ul {
+  .page_menu .entree_plat_dessert section {
     width: 28%;
   }
   .section__fonctionnement .liste_fonction {
