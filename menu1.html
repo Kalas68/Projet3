@@ -12,10 +12,6 @@
         <title>Ohmyfood</title>
     </head>
 
-    <div class="loadcontent">
-        <div class="loading"></div>
-    </div>
-
     <body>
         <header>
             <div>
@@ -27,14 +23,17 @@
         </header>
         <main>
             <div class="page_menu">
-                <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg">
+                <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la française">
                 <div class="menu">
-                    <h1>A la française</h1>
+                    <div class="texte_coeur">
+                        <h1>A la française</h1>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
                     <div class="entree_plat_dessert">  
                         <ul>
                             <h2>ENTREES</h2>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item1">
+                                <div class="text">
                                     <h3>Tartare de poulpe acidulée</h3>
                                     <p>Aux zests d'orange</p>
                                 </div>
@@ -44,8 +43,8 @@
                                 </div>
                             </li>
 
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item2">
+                                <div class="text">
                                     <h3>Velouté de légumes d'antan</h3>
                                     <p>Carotte, panais, topinambour</p>
                                 </div>
@@ -55,8 +54,8 @@
                                 </div>
                             </li>
 
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item3">
+                                <div class="text">
                                     <h3>Soupe à l'oignon</h3>
                                     <p>Revisitée</p>
                                 </div>
@@ -69,8 +68,8 @@
                         </ul>                   
                         <ul>
                             <h2>PLATS</h2>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item1">
+                                <div class="text">
                                     <h3>Coquilles Saint-Jacques</h3>
                                     <p>Accompagnées d'une purée de panais</p>
                                 </div>
@@ -79,8 +78,8 @@
                                     <i class="fa-solid fa-circle-check"></i>
                                 </div>
                             </li>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item2">
+                                <div class="text">
                                     <h3>Magret de canard</h3>
                                     <p>Et parmentier de pommes de terres</p>
                                 </div>
@@ -89,8 +88,8 @@
                                     <i class="fa-solid fa-circle-check"></i>
                                 </div>
                             </li>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item3">
+                                <div class="text">
                                     <h3>Pigeonneau d'Ile-et-Vilaine</h3>
                                     <p>Sur son lit de gnocchis aux légumes</p>
                                 </div>
@@ -102,8 +101,8 @@
                         </ul>
                         <ul>
                             <h2>DESSERT</h2>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item1">
+                                <div class="text">
                                     <h3>Pétales de violettes glacés</h3>
                                     <p>Et purée de noisettes</p>
                                 </div>
@@ -112,8 +111,8 @@
                                     <i class="fa-solid fa-circle-check"></i>
                                 </div>
                             </li>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item2">
+                                <div class="text">
                                     <h3>Fondant au chocolat</h3>
                                     <p>Revisitée</p>
                                 </div>
@@ -122,8 +121,8 @@
                                     <i class="fa-solid fa-circle-check"></i>
                                 </div>
                             </li>
-                            <li class="menu__item">
-                                <div>
+                            <li class="menu__item item3">
+                                <div class="text">
                                     <h3>Millefeuille croustillant</h3>
                                     <p>Myrtilles et pâte d'amande</p>
                                 </div>
@@ -135,6 +134,9 @@
                         </ul>
                     </div>
                 </div>
+                <button class="btn btn_commander">
+                    <span>Commander</span>
+                </button>
             </div>
         </main>
         <footer>

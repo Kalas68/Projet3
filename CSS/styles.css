@@ -17,10 +17,6 @@
   width: 30px;
 }
 
-h2 {
-  margin-left: 20px;
-}
-
 header {
   display: flex;
   justify-content: center;
@@ -46,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  margin-left: 20px;
+}
+
 .section {
   display: flex;
   justify-content: center;
@@ -60,21 +60,21 @@ a {
   align-items: center;
   background: #F6F6F6;
 }
-.section__reserver .btn_explorer {
+.section__reserver .btn {
   cursor: pointer;
   height: 50px;
   border-radius: 25px;
   border-style: none;
   background: linear-gradient(150deg, #FF79DA 0%, #9356DC 100%);
-  margin: 20px auto 30px auto;
+  margin: 0 auto 30px auto;
   box-sizing: border-box;
   padding: 5px 15px;
   transition: all 0.3s;
 }
-.section__reserver .btn_explorer span {
+.section__reserver .btn span {
   color: white;
 }
-.section__reserver .btn_explorer:hover {
+.section__reserver .btn:hover {
   transform: translateY(-5px);
   opacity: 0.8;
   box-shadow: #353535 0px 5px 9px 0px;
@@ -83,6 +83,7 @@ a {
 .section__reserver h2 {
   margin: 0 50px;
   text-align: center;
+  padding-top: 20px;
 }
 .section__reserver p {
   text-align: center;
@@ -113,6 +114,7 @@ a {
   box-shadow: #ced3da 0px 2px 8px 0px;
   margin-bottom: 25px;
   transition: all 0.3s;
+  position: relative;
 }
 .section__fonctionnement .liste_fonction__item i {
   width: 20%;
@@ -122,20 +124,22 @@ a {
 .section__fonctionnement .liste_fonction__item span {
   width: 50%;
 }
-.section__fonctionnement .liste_fonction .liste_fonction__item:hover {
+.section__fonctionnement .liste_fonction__item:hover {
   background: #f2eafb;
   box-shadow: #ced3da 0px 2px 8px 0px;
   transition: all 0.3s;
 }
-.section__fonctionnement .liste_fonction .liste_fonction__item::before {
+.section__fonctionnement .liste_fonction__item::before {
   counter-increment: i;
   content: counters(i, ".") " ";
   position: absolute;
-  left: 4.5%;
-  padding: 5px 6px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: -13px;
   color: white;
-  height: 25px;
-  width: 25px;
+  height: 37px;
+  width: 30px;
   background: #9356DC;
   border-radius: 50%;
 }
@@ -180,7 +184,6 @@ a {
   color: black;
   margin: 0px 20px 30px 0px;
   font-size: 25px;
-  transition: 0.5s all;
 }
 .section__restaurants a .carte .description i:hover {
   -webkit-text-fill-color: transparent;
@@ -213,6 +216,12 @@ a {
   transition: 0.3s all;
 }
 
+.page_menu img {
+  width: 100%;
+  height: 125px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .page_menu .menu {
   position: relative;
   top: -50px;
@@ -228,8 +237,28 @@ a {
 .page_menu .menu p {
   padding-left: 20px;
 }
+.page_menu .menu .texte_coeur {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page_menu .menu .texte_coeur i {
+  color: black;
+  margin: 40px 20px 30px 0px;
+  font-size: 25px;
+}
+.page_menu .menu .texte_coeur i:hover {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(150deg, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-weight: bold;
+}
 .page_menu h2 {
   position: relative;
+  font-weight: 400;
+  color: #737373;
+  font-size: 15px;
 }
 .page_menu h2::after {
   content: "";
@@ -239,18 +268,12 @@ a {
   left: 0;
   position: absolute;
 }
-.page_menu img {
-  width: 100%;
-  height: 125px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .page_menu ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
   list-style: none;
   padding: 0;
+  margin-left: 25px;
 }
 .page_menu ul li {
   width: 90%;
@@ -258,6 +281,7 @@ a {
   background: white;
 }
 .page_menu .menu__item {
+  opacity: 0;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -265,15 +289,15 @@ a {
   margin-bottom: 15px;
   box-shadow: #ced3da 0px 2px 8px 0px;
   overflow: hidden;
-  -webkit-animation: affichage 1.5s;
-          animation: affichage 1.5s;
+  transform: translateY(25px);
 }
-.page_menu .menu__item div {
+.page_menu .menu__item .text {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 85%;
 }
-.page_menu .menu__item div p, .page_menu .menu__item div h3 {
+.page_menu .menu__item .text p, .page_menu .menu__item .text h3 {
   padding: 10px;
   margin: 0;
   overflow: hidden;
@@ -306,9 +330,50 @@ a {
 .page_menu .menu__item:hover strong {
   right: 70px;
 }
+.page_menu .menu__item:hover .text {
+  width: 68%;
+}
 .page_menu .menu__item:hover .valide i {
   transform: rotate(360deg);
   transition-duration: 0.3s;
+}
+.page_menu .item1 {
+  -webkit-animation: affichage 1.5s forwards linear;
+          animation: affichage 1.5s forwards linear;
+}
+.page_menu .item2 {
+  -webkit-animation: affichage 1.5s 0.2s forwards linear;
+          animation: affichage 1.5s 0.2s forwards linear;
+}
+.page_menu .item3 {
+  -webkit-animation: affichage 1.5s 0.4s forwards linear;
+          animation: affichage 1.5s 0.4s forwards linear;
+}
+.page_menu .item4 {
+  -webkit-animation: affichage 1.5s 0.6s forwards linear;
+          animation: affichage 1.5s 0.6s forwards linear;
+}
+.page_menu .btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-radius: 25px;
+  border-style: none;
+  background: linear-gradient(150deg, #FF79DA 0%, #9356DC 100%);
+  margin: 0 auto 30px auto;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  transition: all 0.3s;
+}
+.page_menu .btn span {
+  color: white;
+}
+.page_menu .btn:hover {
+  transform: translateY(-5px);
+  opacity: 0.8;
+  box-shadow: #353535 0px 5px 9px 0px;
+  transition: all 0.3s;
 }
 
 footer {
@@ -426,11 +491,18 @@ footer h4 {
   }
 }
 @media screen and (min-width: 769px) {
-  .entree_plat_dessert {
+  .page_menu img {
+    height: 190px;
+  }
+  .page_menu ul h2 {
+    margin-left: 0;
+  }
+  .page_menu .entree_plat_dessert {
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
-  .entree_plat_dessert ul {
+  .page_menu .entree_plat_dessert ul {
     width: 28%;
   }
   .section__fonctionnement .liste_fonction {
@@ -438,7 +510,18 @@ footer h4 {
     justify-content: space-around;
   }
   .section__fonctionnement .liste_fonction__item {
-    position: relative;
     width: 30%;
+  }
+  .section__restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .section__restaurants a {
+    width: 20%;
+  }
+  .section__restaurants a .carte {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */

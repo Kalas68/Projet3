@@ -30,9 +30,7 @@ $vert: #99E2D0;
     
 }
 
-h2{
-    margin-left: 20px;
-}
+
 header{
     display: flex;
     justify-content: center;
@@ -56,6 +54,9 @@ header{
 a{
     text-decoration: none;
 }
+h2{
+    margin-left: 20px;
+}
 
 .section{
     display: flex;
@@ -64,18 +65,20 @@ a{
     &__localisation{
         background:#EAEAEA;
     }
+
+    //                                              BOUTON RESERVER
     &__reserver{
         margin-top: 25px;
         flex-direction: column;
         align-items: center;
         background: #F6F6F6;
-        .btn_explorer{
+        .btn{
             cursor: pointer;
             height:50px;
             border-radius: 25px;
             border-style: none;
             background: linear-gradient(150deg, $rose 0%, $violet 100%);
-            margin:20px auto 30px auto;
+            margin:0 auto 30px auto;
             box-sizing: border-box;
             padding:5px 15px;
             transition: all 0.3s;
@@ -83,7 +86,7 @@ a{
                 color: white;
             }
         }
-        .btn_explorer:hover{
+        .btn:hover{
             transform: translateY(-5px);
             opacity: 0.8;
             box-shadow: #353535 0px 5px 9px 0px;
@@ -92,11 +95,13 @@ a{
         h2{
             margin: 0 50px;
             text-align: center;
+            padding-top:20px;
         }
         p{
             text-align: center;
         }
     }
+//                                                          PARTIE FONCTIONNEMENT
     &__fonctionnement{
         flex-direction: column;
         .liste_fonction{
@@ -121,6 +126,7 @@ a{
                 box-shadow: #ced3da 0px 2px 8px 0px;
                 margin-bottom: 25px;
                 transition: all 0.3s;
+                position: relative;
                i{
                 width:20%;
                 height:25px;
@@ -130,26 +136,29 @@ a{
                 width: 50%;
                }
             }
-            .liste_fonction__item:hover{
+            &__item:hover{
                 background: #f2eafb;
                 box-shadow: #ced3da 0px 2px 8px 0px;
                 transition: all 0.3s;
             }
             
-            .liste_fonction__item::before{
+            &__item::before{
                 counter-increment: i;
                 content:counters(i,".")" ";
                 position: absolute;
-                left:4.5%;
-                padding:5px 6px 0px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                left: -13px;
                 color:white;
-                height:25px;
-                width:25px;
+                height:37px;
+                width:30px;
                 background: $violet;
                 border-radius: 50%;
             }
         }
     }
+//                                                                 PARTIE RESTAURANTS
     &__restaurants{
         display: flex;
         flex-direction: column;
@@ -187,19 +196,18 @@ a{
                         color:black;
                         margin: 0px 20px 30px 0px;
                         font-size:25px;
-                        transition : 0.5s all;
                         &:hover{
-                            -webkit-text-fill-color: transparent;
+                            -webkit-text-fill-color: transparent; 
                             background: linear-gradient(150deg, $rose 0%, $violet 100%);                    
                             background-clip: text;
-                            font-weight: bold;
+                            font-weight:bold;
                         }
                     }
                 }
                 &__nouveau{
                     position: relative;
                 }
-
+//                                                  ENCADRE VERT NOUVEAU
                 &__nouveau::before{
                 content: "Nouveau";
                 position: absolute;
@@ -217,7 +225,7 @@ a{
                 padding: 8px 13px 6px 13px;
                 }
             }
-
+//                                                  HOVER AGRANDISSEMENT CARTE
             .carte:hover{
                 transform: scale(1.04);
                 transition: 0.3s all;
@@ -229,10 +237,17 @@ a{
     }
 }
 
-//                                                         Pages Menus
+//                                                              PAGES MENUS
 
 .page_menu{
-    
+
+    //                                                          IMAGE RESTAURANT
+    img{
+        width:100%;
+        height:125px;
+        object-fit: cover;
+    }
+
     .menu{
         position: relative;
         top:-50px;
@@ -247,12 +262,31 @@ a{
         p{
             padding-left: 20px;
         }
+        .texte_coeur{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            i{
+                color:black;
+                margin: 40px 20px 30px 0px;
+                font-size:25px;
+                &:hover{
+                    -webkit-text-fill-color: transparent; 
+                    background: linear-gradient(150deg, $rose 0%, $violet 100%);                    
+                    background-clip: text;
+                    font-weight:bold;
+                }
+            }
+        }
     }
 
     h2{
         position: relative;
+        font-weight: 400;
+        color: #737373;
+        font-size: 15px;
     }
-
+    //                                                  SOULIGNEMENT PLATS-ENTREES-DESSERTS
     h2::after{
         content:"";
         border-bottom: $vert solid 2px;
@@ -260,29 +294,26 @@ a{
         bottom: -5px;
         left:0;
         position: absolute;
-
-
     }
     
 
-    img{
-        width:100%;
-        height:125px;
-        object-fit: cover;
-    }
+
+ //                                                     LISTE ENTREES-PLATS-DESSERTS                                                       
     ul{
         display: flex;
         flex-direction: column;
-        align-items: center;
         list-style: none;
         padding: 0;
+        margin-left: 25px;
         li{
             width:90%;
             border-radius: 10px;
             background: white;
         }
     }
+    //                                                       VIGNETTE PLATS
     .menu__item{
+        opacity:0;
         cursor: pointer;
         position: relative;
         display: flex;
@@ -290,11 +321,12 @@ a{
         margin-bottom: 15px;
         box-shadow: #ced3da 0px 2px 8px 0px;
         overflow: hidden;
-        animation: affichage 1.5s;
-        div{
+        transform: translateY(25px);
+        .text{
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            width:85%;
             p, h3{
                 padding: 10px;
                 margin:0;
@@ -303,12 +335,13 @@ a{
                 text-overflow: ellipsis;
             }    
         }
+
+
         strong{
             position: absolute;
             right: 2%;
             bottom:10%;
             transition:0.3s all;
-
         }
         .valide{
             display: flex;
@@ -324,24 +357,67 @@ a{
                 color: white;
             }
         }
-        
-        
-       
-        &:hover .valide{
-            right:0;
-        }
-        &:hover strong{
-            right:70px;
-        }
-        &:hover .valide i{
-            transform: rotate(360deg);
-	        transition-duration: 0.3s;
-        }
+        //                                      Survol d'un plat pour afficher l'icone de validation       
+        &:hover{ 
+             .valide{
+                right:0;
+            }
+            strong{
+                right:70px;
+            }
+            .text{
+                width: 68%;
+            }
+            .valide i{
+                transform: rotate(360deg);
+                transition-duration: 0.3s;
+            }
 
+        }
     }
-    
-}
+    //                                                      ANIMATION AFFICHAGE
 
+    .item1{
+        animation: affichage 1.5s forwards linear;
+    }
+
+    .item2{
+        animation: affichage 1.5s 0.2s forwards linear;
+    }
+
+    .item3{
+        animation: affichage 1.5s 0.4s forwards linear;
+    }
+
+    .item4{
+        animation: affichage 1.5s 0.6s forwards linear;
+    }
+
+    //                                                          BOUTONS + HOVER                                         
+    .btn{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height:50px;
+        border-radius: 25px;
+        border-style: none;
+        background: linear-gradient(150deg, $rose 0%, $violet 100%);
+        margin: 0 auto 30px auto;
+        box-sizing: border-box;
+        padding:5px 15px;
+        transition: all 0.3s;
+        span{
+            color: white;
+        }
+    }
+    .btn:hover{
+        transform: translateY(-5px);
+        opacity: 0.8;
+        box-shadow: #353535 0px 5px 9px 0px;
+        transition: all 0.3s;
+    }
+
+}
 //                                                          FOOTER
 
 footer{
@@ -378,6 +454,7 @@ footer{
     box-shadow: #353535 0px 5px 9px 0px;
 }
 //                                                                 LOADER
+
 .loadcontent
 {
     z-index: 5;
@@ -422,6 +499,8 @@ footer{
     75%
     {
         transform: translateY(5px);
+        
+        
     }
     100%
     {
@@ -451,22 +530,47 @@ footer{
        z-index: -1;
     }
 }
+//                                                  MEDIA QUERIES
 
 @media screen and (min-width:769px){
-    .entree_plat_dessert{
-        display:flex;
-        flex-direction: row;
-        ul{
-            width: 28%;
+
+    .page_menu{
+        img{
+            height:190px;
+        }
+        ul h2{
+            margin-left:0;
+        }
+        .entree_plat_dessert{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            ul{
+                width: 28%;
+            }
         }
     }
+
     .section__fonctionnement{
         .liste_fonction{
             flex-direction: row;
             justify-content: space-around;
             &__item{
-                position: relative;
                 width: 30%;
+            }
+
+        }
+    }
+
+    .section__restaurants {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        a{
+            width: 20%;
+            .carte{
+                width:100%;
             }
         }
     }
