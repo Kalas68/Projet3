@@ -268,14 +268,14 @@ h2 {
   left: 0;
   position: absolute;
 }
-.page_menu ul {
+.page_menu section {
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 0;
   margin-left: 25px;
 }
-.page_menu ul li {
+.page_menu section article {
   width: 90%;
   border-radius: 10px;
   background: white;

@@ -299,13 +299,13 @@ h2{
 
 
  //                                                     LISTE ENTREES-PLATS-DESSERTS                                                       
-    ul{
+    section{
         display: flex;
         flex-direction: column;
         list-style: none;
         padding: 0;
         margin-left: 25px;
-        li{
+        article{
             width:90%;
             border-radius: 10px;
             background: white;
@@ -545,7 +545,7 @@ footer{
             display:flex;
             flex-direction: row;
             justify-content: center;
-            ul{
+            section{
                 width: 28%;
             }
         }
