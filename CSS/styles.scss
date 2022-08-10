@@ -66,6 +66,12 @@ a{
     width: 100%;
     &__localisation{
         background:#EAEAEA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            padding-right: 15px;
+        }
     }
 
     //                                              BOUTON RESERVER
@@ -443,6 +449,7 @@ footer{
             i{
                 color: white;
                 font-size: 10px;
+                width:15px;
             }
         }
     }

@@ -53,6 +53,12 @@ a {
 }
 .section__localisation {
   background: #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__localisation i {
+  padding-right: 15px;
 }
 .section__reserver {
   margin-top: 25px;
@@ -400,6 +406,7 @@ footer ul li a {
 footer ul li i {
   color: white;
   font-size: 10px;
+  width: 15px;
 }
 footer h4 {
   font-family: "Shrikhand", cursive;
