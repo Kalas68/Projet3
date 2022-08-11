@@ -2,15 +2,13 @@ $violet:#9356DC;
 $rose:#FF79DA;
 $vert: #99E2D0;
 
-
-
-
-
 *{
     font-family: Roboto;
 }
 
-
+a{
+    text-decoration: none;
+}
 
 .container{
     display: flex;
@@ -29,7 +27,6 @@ $vert: #99E2D0;
     }
     
 }
-
 
 header{
     display: flex;
@@ -51,9 +48,7 @@ header{
     }
 }
 
-a{
-    text-decoration: none;
-}
+
 
 #restaurants{
     margin-left: 20px;
@@ -444,7 +439,6 @@ footer{
                 color:white;
                 width:50%;
                 text-align: left;
-                text-decoration: none;
             }
             i{
                 color: white;
@@ -577,7 +571,7 @@ footer{
             flex-direction: row;
             justify-content: center;
             section{
-                width: 28%;
+                width: 30%;
             }
         }
     }
