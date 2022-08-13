@@ -49,6 +49,7 @@ header a i {
 .section {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
 }
 .section__localisation {
@@ -144,7 +145,7 @@ header a i {
   align-items: center;
   left: -13px;
   color: white;
-  height: 37px;
+  height: 30px;
   width: 30px;
   background: #9356DC;
   border-radius: 50%;
@@ -153,16 +154,19 @@ header a i {
   margin-left: 20px;
 }
 .section__restaurants {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #F6F6F6;
   width: 100%;
 }
-.section__restaurants a {
+.section__restaurants .liste_restaurants {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.section__restaurants .liste_restaurants a {
   width: 90%;
 }
-.section__restaurants a .carte {
+.section__restaurants .liste_restaurants a .carte {
   box-sizing: border-box;
   border-radius: 25px;
   width: 100%;
@@ -170,41 +174,41 @@ header a i {
   box-shadow: #ced3da 0px 2px 8px 0px;
   transition: 0.3s all;
 }
-.section__restaurants a .carte img {
+.section__restaurants .liste_restaurants a .carte img {
   border-radius: 25px 25px 0 0;
   width: 100%;
   height: 125px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.section__restaurants a .carte .description {
+.section__restaurants .liste_restaurants a .carte .description {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.section__restaurants a .carte .description h3 {
+.section__restaurants .liste_restaurants a .carte .description h3 {
   padding-left: 15px;
 }
-.section__restaurants a .carte .description p {
+.section__restaurants .liste_restaurants a .carte .description p {
   padding: 0px 0px 15px 15px;
   margin: 0;
 }
-.section__restaurants a .carte .description i {
+.section__restaurants .liste_restaurants a .carte .description i {
   color: black;
   margin: 0px 20px 30px 0px;
   font-size: 25px;
 }
-.section__restaurants a .carte .description i:hover {
+.section__restaurants .liste_restaurants a .carte .description i:hover {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(150deg, #FF79DA 0%, #9356DC 100%);
   -webkit-background-clip: text;
           background-clip: text;
   font-weight: bold;
 }
-.section__restaurants a .carte__nouveau {
+.section__restaurants .liste_restaurants a .carte__nouveau {
   position: relative;
 }
-.section__restaurants a .carte__nouveau::before {
+.section__restaurants .liste_restaurants a .carte__nouveau::before {
   content: "Nouveau";
   position: absolute;
   z-index: 1;
@@ -220,7 +224,7 @@ header a i {
   align-items: center;
   padding: 8px 13px 6px 13px;
 }
-.section__restaurants a .carte:hover {
+.section__restaurants .liste_restaurants a .carte:hover {
   transform: scale(1.04);
   transition: 0.3s all;
 }
@@ -536,16 +540,14 @@ footer h4 {
   .section__fonctionnement .liste_fonction__item {
     width: 28%;
   }
-  .section__restaurants {
+  .section__restaurants .liste_restaurants {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
   }
-  .section__restaurants a {
+  .section__restaurants .liste_restaurants a {
     width: 20%;
   }
-  .section__restaurants a .carte {
+  .section__restaurants .liste_restaurants a .carte {
     width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */
