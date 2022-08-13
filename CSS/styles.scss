@@ -63,6 +63,7 @@ header{
     &__localisation{
         background:#EAEAEA;
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         i{
